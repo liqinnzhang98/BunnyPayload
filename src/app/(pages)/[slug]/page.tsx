@@ -10,6 +10,7 @@ import { fetchDocs } from '../../_api/fetchDocs'
 import { Blocks } from '../../_components/Blocks'
 import { Gutter } from '../../_components/Gutter'
 import { Hero } from '../../_components/Hero'
+import SlideShow from '../../_components/SlideShow'
 import { generateMeta } from '../../_utilities/generateMeta'
 
 // Payload Cloud caches all files through Cloudflare, so we don't need Next.js to cache them as well
@@ -63,8 +64,11 @@ export default async function Page({ params: { slug = 'home' } }) {
     <React.Fragment>
       {slug === 'home' ? (
         <section>
-          <Hero {...hero} />
-
+          {/* <Hero {...hero} /> */}
+          <SlideShow slideshow={{
+            title: '',
+            categories: []
+          }} />
           <Gutter className={classes.home}>
             <Categories categories={categories} />
             <Promotion />

@@ -14,6 +14,18 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  // Add border styles
+  border: 2px solid var(--color-primary); // Customize the color
+  border-radius: 10px; // Rounded corners
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Optional shadow for a better look
+
+  transition: all 0.3s ease-in-out; // Smooth transition
+
+  &:hover {
+    border-color: var(--color-secondary); // Change border color on hover
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); // Enhance shadow on hover
+  }
 }
 
 .title {
@@ -21,5 +33,5 @@
   padding: 16px;
   width: 100%;
   text-align: center;
-  background-color: white;
+  background-color: rgb(185, 140, 206);
 }

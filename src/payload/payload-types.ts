@@ -159,6 +159,25 @@ export interface Page {
   createdAt: string;
   _status?: ('draft' | 'published') | null;
 }
+// export interface Slideshow {
+//   id: string;
+//   title: string;
+//   categories: (string | Category)[]; // Array of categories (references to the Category collection)
+//   media?: string | Media | null;
+//   images: {
+//     image: Media; // URL or reference to the media
+//   }[]; // Array of images for the slideshow
+//   createdAt: string;
+//   updatedAt: string;
+// }
+export interface Slideshow {
+  id: string;
+  title: string;
+  // categories: Category[];  // Array of categories to use in the slideshow
+  categories: (string | Category)[]; // Array of categories (references to the Category collection)
+  createdAt: string;
+  updatedAt: string;
+}
 export interface Media {
   id: string;
   alt: string;

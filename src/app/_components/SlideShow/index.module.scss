@@ -1,0 +1,17 @@
+@use '../../_css/queries.scss' as *;
+
+
+.slideshow {
+    position: relative;
+    width: 60%;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    margin: 0 auto;
+  }
+
+.container {
+    margin-top: 20pt;
+}
