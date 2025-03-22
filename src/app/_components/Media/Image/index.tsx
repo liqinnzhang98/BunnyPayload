@@ -70,6 +70,8 @@ export const Image: React.FC<MediaProps> = props => {
       height={!fill ? height : undefined}
       sizes={sizes}
       priority={priority}
+      style={{ width: 'auto', height: 'auto' }}
+      quality={90}
     />
   )
 }

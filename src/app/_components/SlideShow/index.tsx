@@ -2,66 +2,59 @@
 
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
+import Slide from './Slide'
 import styles from './index.module.scss'
+import classes from './index.module.scss'
 
-type Category = {
-  id: string
-  title: string
-  media: {
-    url: string
-  }
-}
+const fetchSlideshow = async () => {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/globals/slideshow`);
+    const data = await response.json();
+    return data;
+  };
+  
+  const SlideShow = () => {
+    const [categories, setCategories] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+  
+    useEffect(() => {
+      fetchSlideshow().then((slideshow) => {
+        if (slideshow.active && slideshow.categories) {
+          setCategories(slideshow.categories);
+        }
+      });
+    }, []);
 
-type Slideshow = {
-  title: string
-  categories: Category[]
-}
+    useEffect(() => {
+      if (categories.length > 0) {
+        const timer = setInterval(() => {
+          setCurrentIndex((prevIndex) => (prevIndex + 1) % categories.length);
+        }, 5000); // Change slide every 5 seconds
 
-const SlideShow = ({ slideshow }: { slideshow: Slideshow }) => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-  useEffect(() => {
-    // Only start the interval if slideshow and categories are available
-    if (slideshow && slideshow.categories && slideshow.categories.length > 0) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % slideshow.categories.length)
-      }, 5000)
-
-      return () => clearInterval(interval)
-    }
-  }, [slideshow]) // Depend on slideshow, not just categories.length
-
-  console.log(slideshow)
-
-  if (!slideshow || !slideshow.categories || slideshow.categories.length === 0) {
-    return <div>No slides available</div> // Optional: Show a message if no slides are available
-  }
+        return () => clearInterval(timer);
+      }
+    }, [categories.length]);
 
   return (
-    <div className={styles.slideshow}>
+    <section className={classes.container}>
+        <div className={styles.slideshow}>
       <AnimatePresence mode="sync">
-        {slideshow.categories.map((category, index) => (
+        {categories.length > 0 && (
           <motion.div
-            key={category.id}
+            key={currentIndex}
             initial={{ opacity: 0 }}
-            animate={{ opacity: index === currentIndex ? 1 : 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
           >
-            <div className={styles.slide}>
-              <Image
-                src={category.media.url}
-                alt={category.title}
-                layout="fill"
-                objectFit="cover"
-                quality={100}
-              />
-            </div>
+            <Slide 
+              image={categories[currentIndex].media.url} 
+              title={categories[currentIndex].title} 
+            />
           </motion.div>
-        ))}
+        )}
       </AnimatePresence>
     </div>
+    </section>
   )
 }
 

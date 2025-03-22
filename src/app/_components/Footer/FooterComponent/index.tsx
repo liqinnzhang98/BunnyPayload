@@ -29,6 +29,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
                 width={36}
                 height={36}
                 className={classes.icon}
+                style={{ width: 'auto', height: 'auto' }}
               />
               <h5 className={classes.title}>{inclusion.title}</h5>
               <p>{inclusion.description}</p>
@@ -40,7 +41,14 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
         <Gutter>
           <div className={classes.wrap}>
             <Link href="/">
-              <Image src="/logo-white.svg" alt="logo" width={170} height={50} />
+              <Image 
+                src="/logo-white.svg" 
+                alt="logo" 
+                width={170} 
+                height={50} 
+                priority
+                style={{ width: 'auto', height: 'auto' }}
+              />
             </Link>
             <p>{footer.copyright}</p>
           </div>
@@ -63,6 +71,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
                   width={24}
                   height={24}
                   className={classes.socialIcon}
+                  style={{ width: 'auto', height: 'auto' }}
                 />
               </Button>
             )

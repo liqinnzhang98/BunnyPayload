@@ -17,7 +17,6 @@ import Categories from './collections/Categories'
 import { Media } from './collections/Media'
 import { Orders } from './collections/Orders'
 import { Pages } from './collections/Pages'
-import Slideshow from './collections/SlideShow';
 import Products from './collections/Products'
 import Users from './collections/Users'
 import BeforeDashboard from './components/BeforeDashboard'
@@ -29,6 +28,7 @@ import { seed } from './endpoints/seed'
 import { Footer } from './globals/Footer'
 import { Header } from './globals/Header'
 import { Settings } from './globals/Settings'
+import Slideshow from './globals/Slideshow'
 import { priceUpdated } from './stripe/webhooks/priceUpdated'
 import { productUpdated } from './stripe/webhooks/productUpdated'
 
@@ -118,8 +118,8 @@ export default buildConfig({
   // // ],
   // database-adapter-config-end
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
-  collections: [Pages, Products, Orders, Media, Categories, Slideshow, Users],
-  globals: [Settings, Header, Footer],
+  collections: [Pages, Products, Orders, Media, Categories, Users],
+  globals: [Settings, Header, Footer, Slideshow],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
