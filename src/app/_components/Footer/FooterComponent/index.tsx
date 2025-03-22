@@ -42,9 +42,9 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
           <div className={classes.wrap}>
             <Link href="/">
               <Image 
-                src="/logo-white.svg" 
-                alt="logo" 
-                width={170} 
+                src="/bunny_logo.png" 
+                alt="Bunny Logo" 
+                width={50} 
                 height={50} 
                 priority
                 style={{ width: 'auto', height: 'auto' }}

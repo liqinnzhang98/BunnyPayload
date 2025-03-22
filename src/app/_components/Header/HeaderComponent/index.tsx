@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Image from 'next/image'
+import Image from "next/image"
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -26,8 +26,8 @@ const HeaderComponent = ({ header }: { header: Header }) => {
           <Image 
             src="/bunny_logo.png" 
             alt="logo" 
-            width={170} 
-            height={50} 
+            width={120} 
+            height={35} 
             priority
             style={{ width: 'auto', height: 'auto' }}
           />

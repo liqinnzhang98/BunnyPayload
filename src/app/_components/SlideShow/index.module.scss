@@ -1,6 +1,5 @@
 @use '../../_css/queries.scss' as *;
 
-
 .slideshow {
     position: relative;
     width: 60%;
@@ -10,8 +9,17 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     display: flex;
     margin: 0 auto;
-  }
+}
 
 .container {
     margin-top: 20pt;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.slideWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }

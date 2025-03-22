@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import NextImage, { StaticImageData } from 'next/image'
+import NextImage from "next/image"
 
 import cssVariables from '../../../cssVariables'
 import { Props as MediaProps } from '../types'
@@ -27,7 +27,7 @@ export const Image: React.FC<MediaProps> = props => {
   let width: number | undefined
   let height: number | undefined
   let alt = altFromProps
-  let src: StaticImageData | string = srcFromProps || ''
+  let src = srcFromProps || ''
 
   if (!src && resource && typeof resource !== 'string') {
     const {

@@ -45,5 +45,5 @@ export const InitTheme: React.FC = () => {
   `,
       }}
     />
-  )
+  );
 }

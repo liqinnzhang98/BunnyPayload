@@ -1,6 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import Link from 'next/link'
 
 import { RenderParams } from '../../_components/RenderParams'

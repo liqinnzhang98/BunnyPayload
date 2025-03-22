@@ -7,9 +7,15 @@ import styles from './index.module.scss'
 import classes from './index.module.scss'
 
 const fetchSlideshow = async () => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/globals/slideshow`);
-    const data = await response.json();
-    return data;
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/globals/slideshow`);
+      const data = await response.json();
+      console.log('Slideshow data:', data); // Debug log
+      return data;
+    } catch (error) {
+      console.error('Error fetching slideshow:', error);
+      return null;
+    }
   };
   
   const SlideShow = () => {
@@ -18,7 +24,8 @@ const fetchSlideshow = async () => {
   
     useEffect(() => {
       fetchSlideshow().then((slideshow) => {
-        if (slideshow.active && slideshow.categories) {
+        if (slideshow?.active && slideshow?.categories) {
+          console.log('Setting categories:', slideshow.categories); // Debug log
           setCategories(slideshow.categories);
         }
       });
@@ -36,24 +43,25 @@ const fetchSlideshow = async () => {
 
   return (
     <section className={classes.container}>
-        <div className={styles.slideshow}>
-      <AnimatePresence mode="sync">
-        {categories.length > 0 && (
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <Slide 
-              image={categories[currentIndex].media.url} 
-              title={categories[currentIndex].title} 
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+      <div className={styles.slideshow}>
+        <AnimatePresence mode="wait">
+          {categories.length > 0 && (
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+              className={styles.slideWrapper}
+            >
+              <Slide 
+                image={categories[currentIndex].media.url} 
+                title={categories[currentIndex].title} 
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </section>
   )
 }
