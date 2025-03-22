@@ -23,8 +23,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en" suppressHydrationWarning>
       <head>
         <InitTheme />
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/bunny_logo.png" sizes="32x32" />
+        <link rel="icon" href="/bunny_logo.png" type="image/svg+xml" />
       </head>
       <body className={jost.variable} suppressHydrationWarning>
         <Providers>

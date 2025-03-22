@@ -65,12 +65,14 @@ export const Image: React.FC<MediaProps> = props => {
           onLoadFromProps()
         }
       }}
-      fill={fill}
-      width={!fill ? width : undefined}
-      height={!fill ? height : undefined}
+      width={width || 1000}
+      height={height || 1000}
       sizes={sizes}
       priority={priority}
-      style={{ width: 'auto', height: 'auto' }}
+      style={{
+        maxWidth: '100%',
+        height: 'auto'
+      }}
       quality={90}
     />
   )

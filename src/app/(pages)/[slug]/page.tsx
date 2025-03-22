@@ -64,12 +64,10 @@ export default async function Page({ params: { slug = 'home' } }) {
     <React.Fragment>
       {slug === 'home' ? (
         <section>
-          {/* <Hero {...hero} /> */}
           <SlideShow />
-          <Gutter className={classes.home}>
+          <div className={classes.home}>
             <Categories categories={categories} />
-            <Promotion />
-          </Gutter>
+          </div>
         </section>
       ) : (
         <>

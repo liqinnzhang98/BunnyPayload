@@ -2,20 +2,27 @@
 
 .slideshow {
     position: relative;
-    width: 60%;
-    height: 600px;
+    width: 80%;
+    height: 500px;
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    margin: 0 auto;
+    
+    @include mid-break {
+        height: 400px;
+    }
+    
+    @include small-break {
+        height: 300px;
+    }
 }
 
 .container {
-    margin-top: 20pt;
+    padding-top: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
 }
 
 .slideWrapper {

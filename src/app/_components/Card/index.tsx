@@ -71,7 +71,7 @@ export const Card: React.FC<{
       <div className={classes.mediaWrapper}>
         {!metaImage && <div className={classes.placeholder}>No image</div>}
         {metaImage && typeof metaImage !== 'string' && (
-          <Media imgClassName={classes.image} resource={metaImage} fill />
+          <Media imgClassName={classes.image} resource={metaImage} />
         )}
       </div>
 
