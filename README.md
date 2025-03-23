@@ -10,6 +10,7 @@ Dynamic Item Management:
 Admins can easily create, edit, and manage product listings with Payload CMS.
 Products are displayed on the 'Items' page, which filters results based on search input.
 Supports product categories, subcategories, and product variations (e.g., size, color).
+
 User Authentication:
 
 Customers can register, log in, and manage their profiles using a secure authentication system built with Next.js, Payload CMS, and MongoDB.
