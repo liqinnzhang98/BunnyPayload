@@ -1,12 +1,14 @@
 Payload Based Ecommerce platform
 
+![Project Screenshot](assets/images/bunnypayloadScreenshot.png)
+
 This project involves developing a full-featured e-commerce website leveraging Payload CMS as the core content management system. The goal is to create a modern, flexible, and scalable online store that ensures a seamless user experience for both customers and administrators.
 
 Project Features
 Dynamic Item Management:
 
 Admins can easily create, edit, and manage product listings with Payload CMS.
-Products are displayed on the ‘Items’ page, which filters results based on search input.
+Products are displayed on the 'Items' page, which filters results based on search input.
 Supports product categories, subcategories, and product variations (e.g., size, color).
 User Authentication:
 
