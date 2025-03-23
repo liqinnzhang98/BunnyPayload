@@ -38,24 +38,21 @@ const handleSearchClick = () => {
 
 
       {/* Search Bar */}
-      <div className='container'>
-            <input
-                type="text"
-                placeholder="Search..."
-                className="input"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            {showButton && (
-                <button
-                onClick={handleSearchClick}
-                className={`button ${showButton ? '' : 'hidden'}`}
-                >
-                Search
-                </button>
-            )}
-            </div>
-
+      <div className={classes.searchContainer}>
+        <input
+          type="text"
+          placeholder="Search..."
+          className={classes.searchInput}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        {showButton && (
+          <button onClick={handleSearchClick} className={classes.searchButton}>
+            Search
+          </button>
+        )}
+      </div>
+      
       {user && <Link href="/account">Account</Link>}
       {!user && (
         <Button
