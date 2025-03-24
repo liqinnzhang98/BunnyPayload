@@ -58,9 +58,10 @@ A modern, full-featured e-commerce platform built with Payload CMS, Next.js, and
    ```
    DATABASE_URI=your_mongodb_atlas_uri
    PAYLOAD_SECRET=your_jwt_secret
-   AWS_ACCESS_KEY_ID=your_aws_access_key
-   AWS_SECRET_ACCESS_KEY=your_aws_secret_key
-   AWS_BUCKET=your_s3_bucket_name
+   S3_BUCKET= bucket_name
+   S3_ACCESS_KEY_ID= secret_key_id
+   S3_SECRET_ACCESS_KEY= access_key
+   S3_REGION= region
    ```
 
 3. Install dependencies:
