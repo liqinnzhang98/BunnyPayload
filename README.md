@@ -1,41 +1,89 @@
-Payload Based Ecommerce platform
+# BunnyPayload - E-commerce Platform
 
-![Project Screenshot](assets/images/bunnypayloadScreenshot.png)
+[![Project Screenshot](assets/images/bunnypayloadScreenshot.png)](assets/images/bunnypayloadScreenshot.png)
 
-This project involves developing a full-featured e-commerce website leveraging Payload CMS as the core content management system. The goal is to create a modern, flexible, and scalable online store that ensures a seamless user experience for both customers and administrators.
+A modern, full-featured e-commerce platform built with Payload CMS, Next.js, and MongoDB. This project delivers a seamless shopping experience while providing administrators with powerful content management capabilities.
 
-Project Features
-Dynamic Item Management:
+## 🚀 Features
 
-Admins can easily create, edit, and manage product listings with Payload CMS.
-Products are displayed on the 'Items' page, which filters results based on search input.
-Supports product categories, subcategories, and product variations (e.g., size, color).
+### Dynamic Item Management
+- Create, edit, and manage product listings through Payload CMS
+- Advanced product filtering and search functionality
+- Support for product categories, subcategories, and variations (size, color)
 
-User Authentication:
+### User Authentication
+- Secure user registration and login system
+- Dynamic navigation based on authentication status
+- Profile management for customers
 
-Customers can register, log in, and manage their profiles using a secure authentication system built with Next.js, Payload CMS, and MongoDB.
-Navigation bar dynamically updates based on user status (showing Login/Register or Profile/Logout options).
-Payments Integration:
+### Payment Integration
+- Stripe integration for secure payment processing
+- Card saving functionality
+- Order history tracking
+- Automated email confirmations
 
-Stripe is integrated for secure payment processing, enabling users to complete transactions smoothly.
-Customers can save cards, view order histories, and receive automated order confirmations via email.
-SEO Optimization & Redirects:
+### SEO & Performance
+- Built-in SEO optimization tools
+- Custom redirect handling
+- Category-based navigation system
+- Responsive design for all devices
 
-Implemented SEO tools for better visibility on search engines.
-Custom redirects ensure that any broken links are handled gracefully to enhance user retention.
-Navigation & Dropdown Menus:
+### Content Management
+- CMS-driven content flexibility
+- Banner and promotion management
+- Nested document support
+- Cloud-based hosting with payloadCloud() plugin
 
-A category-based dropdown list improves navigation, allowing customers to explore product subcategories easily.
-The layout is optimized to provide an intuitive and fast browsing experience.
-Cloud Hosting & Payload Plugin:
+## 🛠️ Tech Stack
 
-Using the payloadCloud() plugin for seamless deployment and scalability.
-Cloud-based hosting ensures high availability, even during traffic spikes.
-CMS-Driven Content Flexibility:
+- **Frontend**: Next.js
+- **Backend**: Payload CMS
+- **Database**: MongoDB
+- **Payment**: Stripe
+- **Storage**: AWS S3
+- **Authentication**: JWT
 
-Administrators can manage site-wide content like banners, promotions, and landing pages without needing developer assistance.
-Supports nested documents for organizing related information (e.g., product FAQs or technical specifications).
-Mobile-Friendly & Responsive Design:
+## 🚀 Getting Started
 
-Optimized for both desktop and mobile views, ensuring an excellent user experience across all devices.
-This project reflects the best practices of e-commerce development by combining Payload CMS's powerful content management capabilities with Next.js, MongoDB, Stripe payments, and responsive design principles. The site offers a smooth shopping experience while providing admins with the flexibility to maintain and expand the store efficiently.
+### Prerequisites
+- Node.js
+- MongoDB Atlas account
+- AWS S3 bucket
+- Stripe account
+
+### Installation
+
+1. Clone the repository
+2. Copy `.env.example` to `.env` and configure the following variables:
+   ```
+   DATABASE_URI=your_mongodb_atlas_uri
+   PAYLOAD_SECRET=your_jwt_secret
+   AWS_ACCESS_KEY_ID=your_aws_access_key
+   AWS_SECRET_ACCESS_KEY=your_aws_secret_key
+   AWS_BUCKET=your_s3_bucket_name
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Build the project:
+   ```bash
+   npm run build
+   ```
+
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+6. Access the Payload admin panel and register for the admin role
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
